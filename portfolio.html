@@ -1,0 +1,2218 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    UX/UI Portfolio — Nattapong Sukon
+  </title>
+
+  <meta
+    name="description"
+    content="UX/UI Design Portfolio — Nattapong Sukon">
+
+  <!-- =========================================
+       FONT
+  ========================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+  <!-- =========================================
+       FONT AWESOME
+  ========================================== -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <!-- =========================================
+       MAIN CSS
+  ========================================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css">
+
+
+  <!-- =========================================
+       PORTFOLIO PAGE CSS
+  ========================================== -->
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      font-family:
+        "DM Sans",
+        "Noto Sans Thai",
+        sans-serif;
+
+      background: #050505;
+
+      color: #fff;
+    }
+
+
+    /* =========================================
+       NAV
+    ========================================== */
+
+    .portfolio-nav {
+      position: sticky;
+
+      top: 0;
+
+      z-index: 999;
+
+      width: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 18px 5%;
+
+      background:
+        rgba(5, 5, 5, .82);
+
+      backdrop-filter: blur(18px);
+
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08);
+    }
+
+
+    .portfolio-logo {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      letter-spacing: .08em;
+    }
+
+
+    .portfolio-logo-dot {
+      width: 12px;
+
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: #fff;
+
+      box-shadow:
+        0 0 20px
+        rgba(255,255,255,.55);
+    }
+
+
+    .back-home {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: rgba(255,255,255,.78);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: .25s ease;
+    }
+
+
+    .back-home:hover {
+      color: #fff;
+
+      transform: translateX(-3px);
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================== */
+
+    .portfolio-hero {
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        110px 5%
+        80px;
+
+      text-align: center;
+    }
+
+
+    .portfolio-hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+
+      height: 600px;
+
+      left: 50%;
+
+      top: -350px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(255,255,255,.07);
+
+      box-shadow:
+        0 0 120px
+        rgba(90, 130, 255, .12);
+
+      pointer-events: none;
+    }
+
+
+    .portfolio-eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      padding: 8px 14px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.04);
+
+      color:
+        rgba(255,255,255,.68);
+
+      font-size: 12px;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+
+    .portfolio-hero h1 {
+      position: relative;
+
+      margin:
+        22px auto
+        14px;
+
+      max-width: 900px;
+
+      font-size:
+        clamp(40px, 7vw, 82px);
+
+      line-height: .95;
+
+      letter-spacing: -.055em;
+    }
+
+
+    .portfolio-hero h1 span {
+      opacity: .45;
+    }
+
+
+    .portfolio-hero p {
+      position: relative;
+
+      max-width: 680px;
+
+      margin: 0 auto;
+
+      color:
+        rgba(255,255,255,.62);
+
+      line-height: 1.8;
+
+      font-size: 15px;
+    }
+
+
+    /* =========================================
+       CATEGORY TABS
+    ========================================== */
+
+    .portfolio-tabs {
+      position: relative;
+
+      z-index: 2;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+
+      padding:
+        0 5%
+        30px;
+    }
+
+
+    .portfolio-tab {
+      border: 1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.04);
+
+      color:
+        rgba(255,255,255,.65);
+
+      border-radius: 999px;
+
+      padding:
+        12px 20px;
+
+      cursor: pointer;
+
+      font-family: inherit;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+
+    .portfolio-tab:hover {
+      transform: translateY(-2px);
+
+      color: #fff;
+
+      border-color:
+        rgba(255,255,255,.24);
+    }
+
+
+    .portfolio-tab.active {
+      color: #000;
+
+      background: #fff;
+
+      border-color: #fff;
+    }
+
+
+    /* =========================================
+       PORTFOLIO SECTION
+    ========================================== */
+
+    .portfolio-section {
+      display: none;
+
+      width: min(1400px, 90%);
+
+      margin: 0 auto;
+
+      padding:
+        45px 0
+        100px;
+    }
+
+
+    .portfolio-section.active {
+      display: block;
+    }
+
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+
+    .section-heading .number {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color:
+        rgba(255,255,255,.38);
+
+      font-size: 12px;
+
+      letter-spacing: .16em;
+    }
+
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+
+      font-size:
+        clamp(30px, 4vw, 48px);
+
+      letter-spacing: -.04em;
+    }
+
+
+    .section-heading p {
+      max-width: 650px;
+
+      margin: 0;
+
+      color:
+        rgba(255,255,255,.55);
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================
+       UI GRID
+    ========================================== */
+
+    .ui-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 28px;
+    }
+
+
+    /* =========================================
+       UI CARD
+    ========================================== */
+
+    .ui-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 24px;
+
+      background:
+        rgba(255,255,255,.035);
+
+      border:
+        1px solid
+        rgba(255,255,255,.09);
+
+      box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.22);
+
+      transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+    }
+
+
+    .ui-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(255,255,255,.18);
+
+      box-shadow:
+        0 40px 100px
+        rgba(0,0,0,.32);
+    }
+
+
+    .ui-card-info {
+      padding: 28px 28px 24px;
+    }
+
+
+    .project-number {
+      display: inline-block;
+
+      margin-bottom: 12px;
+
+      color:
+        rgba(255,255,255,.38);
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: .16em;
+    }
+
+
+    .ui-card-info h3 {
+      margin: 0 0 10px;
+
+      font-size: 25px;
+
+      letter-spacing: -.025em;
+    }
+
+
+    .ui-card-info p {
+      min-height: 55px;
+
+      margin: 0 0 18px;
+
+      color:
+        rgba(255,255,255,.57);
+
+      font-size: 14px;
+
+      line-height: 1.75;
+    }
+
+
+    .tech-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .tech-list span {
+      display: inline-flex;
+
+      align-items: center;
+
+      padding:
+        6px 10px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.055);
+
+      border:
+        1px solid
+        rgba(255,255,255,.08);
+
+      color:
+        rgba(255,255,255,.7);
+
+      font-size: 11px;
+    }
+
+
+    .project-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+
+    .project-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      min-height: 40px;
+
+      padding:
+        0 15px;
+
+      border-radius: 10px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      transition: .25s ease;
+    }
+
+
+    .project-btn:hover {
+      background:
+        rgba(255,255,255,.08);
+
+      border-color:
+        rgba(255,255,255,.24);
+
+      transform: translateY(-2px);
+    }
+
+
+    .project-btn.primary {
+      background: #fff;
+
+      color: #000;
+
+      border-color: #fff;
+    }
+
+
+    .project-btn.primary:hover {
+      background:
+        rgba(255,255,255,.88);
+    }
+
+
+    /* =========================================
+       COMPUTER FRAME
+    ========================================== */
+
+    .device-wrap {
+      padding:
+        0 18px
+        18px;
+    }
+
+
+    .device-frame {
+      position: relative;
+
+      width: 100%;
+
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      background: #111;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.35);
+    }
+
+
+    .browser-bar {
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding:
+        0 12px;
+
+      background: #1b1b1b;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+    }
+
+
+    .browser-dot {
+      width: 8px;
+
+      height: 8px;
+
+      flex: 0 0 auto;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.28);
+    }
+
+
+    .browser-address {
+      overflow: hidden;
+
+      white-space: nowrap;
+
+      text-overflow: ellipsis;
+
+      flex: 1;
+
+      margin-left: 7px;
+
+      padding:
+        5px 9px;
+
+      border-radius: 6px;
+
+      background:
+        rgba(255,255,255,.05);
+
+      color:
+        rgba(255,255,255,.38);
+
+      font-size: 9px;
+    }
+
+
+    .device-screen {
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      background: #fff;
+
+      overflow: hidden;
+    }
+
+
+    .device-screen iframe {
+      position: absolute;
+
+      left: 0;
+
+      top: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      border: 0;
+
+      background: #fff;
+    }
+
+
+    /* =========================================
+       FIGMA FRAME
+    ========================================== */
+
+    .figma-frame {
+      background:
+        linear-gradient(
+          135deg,
+          #161616,
+          #252525
+        );
+    }
+
+
+    .figma-frame .device-screen {
+      background:
+        #181818;
+    }
+
+
+    .figma-frame iframe {
+      background:
+        #181818;
+    }
+
+
+    /* =========================================
+       GRAPHIC GRID
+    ========================================== */
+
+    .graphic-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+
+
+    .graphic-card {
+      position: relative;
+
+      overflow: hidden;
+
+      aspect-ratio: 4 / 3;
+
+      border-radius: 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.09);
+
+      background:
+        rgba(255,255,255,.04);
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+
+    .graphic-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(255,255,255,.2);
+    }
+
+
+    .graphic-card img {
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform .45s ease;
+    }
+
+
+    .graphic-card:hover img {
+      transform: scale(1.04);
+    }
+
+
+    /* =========================================
+       EMPTY / IMAGE FALLBACK
+    ========================================== */
+
+    .image-fallback {
+      width: 100%;
+
+      height: 100%;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #151515,
+          #242424
+        );
+
+      color:
+        rgba(255,255,255,.35);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================== */
+
+    .portfolio-footer {
+      padding:
+        35px 5%;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+      text-align: center;
+
+      color:
+        rgba(255,255,255,.38);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================== */
+
+    @media (max-width: 950px) {
+
+      .ui-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .graphic-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .portfolio-nav {
+        padding:
+          15px 5%;
+      }
+
+
+      .portfolio-logo {
+        font-size: 12px;
+      }
+
+
+      .back-home {
+        font-size: 12px;
+      }
+
+
+      .portfolio-hero {
+        padding:
+          75px 5%
+          55px;
+      }
+
+
+      .portfolio-section {
+        width: 92%;
+
+        padding-bottom: 70px;
+      }
+
+
+      .ui-card-info {
+        padding:
+          22px 20px
+          20px;
+      }
+
+
+      .ui-card-info h3 {
+        font-size: 22px;
+      }
+
+
+      .ui-card-info p {
+        min-height: auto;
+      }
+
+
+      .device-wrap {
+        padding:
+          0 10px
+          10px;
+      }
+
+
+      .browser-bar {
+        height: 32px;
+      }
+
+
+      .graphic-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 420px) {
+
+      .portfolio-tabs {
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+
+
+      .portfolio-tab {
+        width: 100%;
+      }
+
+
+      .project-actions {
+        display: grid;
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .project-btn {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
+
+  <nav class="portfolio-nav">
+
+
+    <a
+      href="index.html"
+      class="portfolio-logo">
+
+      <span class="portfolio-logo-dot"></span>
+
+      <span>
+        NATTAPONG
+      </span>
+
+    </a>
+
+
+    <a
+      href="index.html"
+      class="back-home">
+
+      <i class="fa-solid fa-arrow-left"></i>
+
+      Back to Home
+
+    </a>
+
+
+  </nav>
+
+
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <header class="portfolio-hero">
+
+
+    <span class="portfolio-eyebrow">
+
+      MY WORK
+
+    </span>
+
+
+    <h1>
+
+      UX/UI
+      <span>Portfolio.</span>
+
+    </h1>
+
+
+    <p>
+
+      รวมผลงานด้าน UX/UI Design,
+      Web Design และ Interactive Prototype
+      ที่ออกแบบโดยใช้ Figma
+      และพัฒนาด้วย HTML, CSS และ JavaScript
+
+    </p>
+
+
+  </header>
+
+
+
+  <!-- =========================================
+       TABS
+  ========================================== -->
+
+  <div class="portfolio-tabs">
+
+
+    <button
+      class="portfolio-tab active"
+      data-target="uiux">
+
+      UX/UI Design
+
+    </button>
+
+
+    <button
+      class="portfolio-tab"
+      data-target="graphic">
+
+      Graphic Design
+
+    </button>
+
+
+  </div>
+
+
+
+  <!-- =========================================
+       UX/UI PROJECTS
+  ========================================== -->
+
+  <section
+    class="portfolio-section active"
+    id="uiux">
+
+
+    <div class="section-heading">
+
+
+      <span class="number">
+        01 / UX/UI
+      </span>
+
+
+      <h2>
+        UX/UI Design
+      </h2>
+
+
+      <p>
+
+        ผลงานเว็บไซต์และ Prototype
+        ที่ออกแบบและพัฒนาโดยเน้น
+        User Interface, Usability,
+        Responsive Design
+        และ Interactive Experience
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="ui-grid">
+
+
+
+      <!-- =====================================
+           PROJECT 01
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 01
+          </span>
+
+
+          <h3>
+            CP ALL — New Employee Guide
+          </h3>
+
+
+          <p>
+
+            เว็บไซต์คู่มือพนักงานใหม่
+            ออกแบบให้ผู้ใช้งานสามารถ
+            เข้าถึงข้อมูลระเบียบการทำงาน
+            สวัสดิการ การแต่งกาย
+            การจ่ายค่าจ้าง และวันลา
+            ได้อย่างเป็นระบบ
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              UX/UI
+            </span>
+
+            <span>
+              Web Design
+            </span>
+
+            <span>
+              HTML
+            </span>
+
+            <span>
+              CSS
+            </span>
+
+            <span>
+              JavaScript
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="https://sawatgigan.vercel.app/"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              เปิดเว็บไซต์
+
+            </a>
+
+
+            <a
+              class="project-btn"
+              href="https://sawatgigan.vercel.app/"
+              target="_blank"
+              rel="noopener">
+
+              View Fullscreen
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                sawatgigan.vercel.app
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="https://sawatgigan.vercel.app/"
+                title="CP ALL New Employee Guide"
+                loading="lazy"
+                allow="fullscreen">
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 02
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 02
+          </span>
+
+
+          <h3>
+            Project 2 — Figma UI Design
+          </h3>
+
+
+          <p>
+
+            ผลงานออกแบบ UI ใน Figma
+            เน้นการจัดวางองค์ประกอบ
+            Visual Hierarchy
+            และการออกแบบหน้าจอ
+            ให้เหมาะกับการใช้งานจริง
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              Figma
+            </span>
+
+            <span>
+              UI Design
+            </span>
+
+            <span>
+              Prototype
+            </span>
+
+            <span>
+              Wireframe
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="https://www.figma.com/design/ma8iwnx9p8SwQc6GhgHKPA/Project2?node-id=0-1&t=ISP21HJeVmTGIMTO-1"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-brands fa-figma"></i>
+
+              เปิดใน Figma
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame figma-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                figma.com/design/Project2
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2Fma8iwnx9p8SwQc6GhgHKPA%2FProject2%3Fnode-id%3D0-1"
+                title="Figma Project 2"
+                loading="lazy"
+                allowfullscreen>
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 03
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 03
+          </span>
+
+
+          <h3>
+            Happy Anniversary
+          </h3>
+
+
+          <p>
+
+            เว็บไซต์ Interactive
+            สำหรับสร้างประสบการณ์
+            และความทรงจำในโอกาสพิเศษ
+            ออกแบบให้ผู้ใช้งาน
+            มีส่วนร่วมกับหน้าเว็บไซต์
+            ผ่าน Animation และ Interaction
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              UX/UI
+            </span>
+
+            <span>
+              Interactive
+            </span>
+
+            <span>
+              Web Design
+            </span>
+
+            <span>
+              Responsive
+
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="https://jibyebp-anniversary.netlify.app/"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              เปิดเว็บไซต์
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                jibyebp-anniversary.netlify.app
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="https://jibyebp-anniversary.netlify.app/"
+                title="Happy Anniversary"
+                loading="lazy"
+                allow="fullscreen">
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 04
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 04
+          </span>
+
+
+          <h3>
+            Intelligent Sales System
+          </h3>
+
+
+          <p>
+
+            Interactive Prototype
+            สำหรับระบบ Intelligent Sales System
+            ออกแบบ User Flow และหน้าจอ
+            สำหรับการใช้งานระบบ
+            โดยพัฒนา Prototype ใน Figma
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              Figma
+            </span>
+
+            <span>
+              UX/UI
+            </span>
+
+            <span>
+              Prototype
+            </span>
+
+            <span>
+              User Flow
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="https://www.figma.com/proto/YYyn0Hme17vA30ZhNfN1ZW/Intelligent-Sales-System?node-id=103-241&starting-point-node-id=103%3A241&t=0rWP15VYg9fFWJXv-1"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-brands fa-figma"></i>
+
+              เปิด Prototype
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame figma-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                Figma — Intelligent Sales System
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYYyn0Hme17vA30ZhNfN1ZW%2FIntelligent-Sales-System%3Fnode-id%3D103-241%26starting-point-node-id%3D103%253A241"
+                title="Intelligent Sales System"
+                loading="lazy"
+                allowfullscreen>
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 05
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 05
+          </span>
+
+
+          <h3>
+            Interactive Birthday
+          </h3>
+
+
+          <p>
+
+            เว็บไซต์ Interactive
+            ที่ออกแบบประสบการณ์ให้ผู้ใช้งาน
+            มีส่วนร่วมผ่าน Animation,
+            Interaction และ Storytelling
+            บนหน้าเว็บไซต์
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              UX/UI
+            </span>
+
+            <span>
+              Interaction
+            </span>
+
+            <span>
+              Animation
+            </span>
+
+            <span>
+              Web Design
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="http://jipyebp-sswk.vercel.app/"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              เปิดเว็บไซต์
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                jipyebp-sswk.vercel.app
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="http://jipyebp-sswk.vercel.app/"
+                title="Interactive Birthday"
+                loading="lazy"
+                allow="microphone; fullscreen">
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================================
+           PROJECT 06
+      ====================================== -->
+
+      <article class="ui-card">
+
+
+        <div class="ui-card-info">
+
+
+          <span class="project-number">
+            PROJECT 06
+          </span>
+
+
+          <h3>
+            Anniversary Memory Book
+          </h3>
+
+
+          <p>
+
+            เว็บไซต์ Memory Book
+            ที่ออกแบบเป็นประสบการณ์
+            แบบหลายหน้า
+            สำหรับนำเสนอรูปภาพ
+            เรื่องราว และความทรงจำ
+            ในรูปแบบ Interactive Website
+
+          </p>
+
+
+          <div class="tech-list">
+
+            <span>
+              UX/UI
+            </span>
+
+            <span>
+              Web Design
+            </span>
+
+            <span>
+              Interactive
+            </span>
+
+            <span>
+              Responsive
+            </span>
+
+          </div>
+
+
+          <div class="project-actions">
+
+
+            <a
+              class="project-btn primary"
+              href="https://jipyebp-anniversary-book.vercel.app/"
+              target="_blank"
+              rel="noopener">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+              เปิดเว็บไซต์
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="device-wrap">
+
+
+          <div class="device-frame">
+
+
+            <div class="browser-bar">
+
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+
+
+              <div class="browser-address">
+
+                jipyebp-anniversary-book.vercel.app
+
+              </div>
+
+            </div>
+
+
+            <div class="device-screen">
+
+
+              <iframe
+                src="https://jipyebp-anniversary-book.vercel.app/"
+                title="Anniversary Memory Book"
+                loading="lazy"
+                allow="fullscreen">
+
+              </iframe>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================
+       GRAPHIC DESIGN
+  ========================================== -->
+
+  <section
+    class="portfolio-section"
+    id="graphic">
+
+
+    <div class="section-heading">
+
+
+      <span class="number">
+        02 / GRAPHIC
+      </span>
+
+
+      <h2>
+        Graphic Design
+      </h2>
+
+
+      <p>
+
+        ผลงาน Graphic Design
+        ที่แสดงถึงพื้นฐานด้านการออกแบบ
+        การจัดองค์ประกอบ
+        สี Typography
+        และ Visual Communication
+
+      </p>
+
+
+    </div>
+
+
+    <div class="graphic-grid">
+
+
+      <!-- IMAGE 01 -->
+
+      <a
+        href="images/graphic/graphic-01.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-01.jpg"
+          alt="Graphic Design 01"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-01.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 02 -->
+
+      <a
+        href="images/graphic/graphic-02.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-02.jpg"
+          alt="Graphic Design 02"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-02.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 03 -->
+
+      <a
+        href="images/graphic/graphic-03.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-03.jpg"
+          alt="Graphic Design 03"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-03.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 04 -->
+
+      <a
+        href="images/graphic/graphic-04.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-04.jpg"
+          alt="Graphic Design 04"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-04.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 05 -->
+
+      <a
+        href="images/graphic/graphic-05.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-05.jpg"
+          alt="Graphic Design 05"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-05.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 06 -->
+
+      <a
+        href="images/graphic/graphic-06.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-06.jpg"
+          alt="Graphic Design 06"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-06.jpg</div>'">
+
+      </a>
+
+
+
+      <!-- IMAGE 07 -->
+
+      <a
+        href="images/graphic/graphic-07.jpg"
+        target="_blank"
+        class="graphic-card">
+
+        <img
+          src="images/graphic/graphic-07.jpg"
+          alt="Graphic Design 07"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;image-fallback&quot;>graphic-07.jpg</div>'">
+
+      </a>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="portfolio-footer">
+
+    ©
+    <span id="portfolioYear">
+      2026
+    </span>
+
+    Nattapong Sukon
+    — UX/UI Designer
+
+  </footer>
+
+
+
+  <!-- =========================================
+       MAIN JS
+  ========================================== -->
+
+  <script src="main.js"></script>
+
+
+
+  <!-- =========================================
+       PORTFOLIO TAB JS
+  ========================================== -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+
+        const tabs =
+          document.querySelectorAll(
+            ".portfolio-tab"
+          );
+
+
+        const sections =
+          document.querySelectorAll(
+            ".portfolio-section"
+          );
+
+
+        function showSection(target) {
+
+
+          tabs.forEach(function (tab) {
+
+            tab.classList.toggle(
+              "active",
+              tab.dataset.target === target
+            );
+
+          });
+
+
+          sections.forEach(function (section) {
+
+            section.classList.toggle(
+              "active",
+              section.id === target
+            );
+
+          });
+
+
+          if (
+            history.replaceState
+          ) {
+
+            history.replaceState(
+              null,
+              "",
+              "#" + target
+            );
+
+          }
+
+        }
+
+
+        tabs.forEach(function (tab) {
+
+          tab.addEventListener(
+            "click",
+            function () {
+
+              showSection(
+                tab.dataset.target
+              );
+
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              });
+
+            }
+          );
+
+        });
+
+
+        /* =====================================
+           OPEN TAB FROM HASH
+        ====================================== */
+
+        const hash =
+          window.location.hash
+            .replace("#", "");
+
+
+        if (
+          hash === "graphic" ||
+          hash === "uiux"
+        ) {
+
+          showSection(hash);
+
+        }
+
+
+        /* =====================================
+           YEAR
+        ====================================== */
+
+        const year =
+          document.getElementById(
+            "portfolioYear"
+          );
+
+
+        if (year) {
+
+          year.textContent =
+            new Date().getFullYear();
+
+        }
+
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
